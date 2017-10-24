@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
+using TeLiga.Views;
+using TeLiga.ViewModels;
 using Xamarin.Forms;
 
 namespace TeLiga
@@ -13,12 +14,17 @@ namespace TeLiga
         {
             InitializeComponent();
 
-            MainPage = new TeLiga.MainPage();
+            //MainPage = new TeLiga.MainPage();
+            MainPage = new LoginView();
         }
 
         protected override void OnStart()
         {
-            // Handle when your app starts
+            MessagingCenter.Subscribe<LoginViewModel>(this, "SucessLogin",
+                (msg) =>
+                {
+                    MainPage = new MasterDetailView();
+                });
         }
 
         protected override void OnSleep()
