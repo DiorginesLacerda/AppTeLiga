@@ -4,7 +4,25 @@
              x:Class="TeLiga.Views.EventListView">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin Forms!" />
+            <ListView
+                x:Name="ListEvent">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.View>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="{Binding Title}"
+                                           VerticalTextAlignment="Center"
+                                           HorizontalOptions="CenterAndExpand"
+                                           FontAttributes="Bold"
+                                           FontSize="Large"/>
+                                    <!--  <Label Text="{Binding DateEvent, StringFormat={0}}"/>-->
+                                </StackLayout>
+                            </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
