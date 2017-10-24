@@ -4,7 +4,17 @@
              x:Class="TeLiga.Views.EventView">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin Forms!" />
+            <TableView Intent="Form">
+                <TableSection Title="Evento">
+                    <TextCell Text="{Binding Title}"/>
+                    <TextCell Text="{Binding DateEvent, StringFormat='{0:dd/MM/yyyy hh:mm}'}"/>
+                    <TextCell Text="{Binding Description}"/>
+                    <TextCell Text="{Binding Place}"/>
+                    <TextCell Text="{Binding Adress}"/>
+                    <TextCell Text="{Binding City}"/>
+                    <SwitchCell Text="Alertar" On="{Binding Alert, Mode=TwoWay}"/>
+                </TableSection>
+            </TableView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
