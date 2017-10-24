@@ -17,7 +17,7 @@ namespace TeLiga.ViewModels
         {
             this.Events = new ObservableCollection<EventVo>
             {
-                new EventVo{ Title = " Evento XPTO"},
+                new EventVo{ Title = " Evento XPTO", DateEvent = new DateTime(2009, 8, 1, 0, 0, 0)},
                 new EventVo{ Title = " Evento XPTO"},
                 new EventVo{ Title = " Evento XPTO"},
                 new EventVo{ Title = " Evento XPTO"},
