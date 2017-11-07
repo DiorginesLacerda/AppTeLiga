@@ -48,6 +48,10 @@
     <Compile Include="ViewModels\EventListViewModel.cs" />
     <Compile Include="ViewModels\EventViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
+    <Compile Include="ViewModels\MenuMasterViewModel.cs" />
+    <Compile Include="Views\EventEditView.xaml.cs">
+      <DependentUpon>EventEditView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\EventListView.xaml.cs">
       <DependentUpon>EventListView.xaml</DependentUpon>
     </Compile>
@@ -88,7 +92,12 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Views\EventEditView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Views\EventListView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>

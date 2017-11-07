@@ -4,8 +4,19 @@
              x:Class="TeLiga.Views.MenuMasterView"
              Title="Menu">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin Forms!" />
+        <StackLayout
+            VerticalOptions="Center"
+            Spacing="20">
+            <Label Text="Criar novo Evento">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding NewEventCommand}"/>
+                </Label.GestureRecognizers>
+            </Label>
+            <Label Text="Sair">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding ExitCommand}"/>
+                </Label.GestureRecognizers>
+            </Label>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

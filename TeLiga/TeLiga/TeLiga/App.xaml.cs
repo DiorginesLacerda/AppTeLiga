@@ -5,11 +5,20 @@ using System.Text;
 using TeLiga.Views;
 using TeLiga.ViewModels;
 using Xamarin.Forms;
+using System.Threading.Tasks;
 
 namespace TeLiga
 {
     public partial class App : Application
     {
+        
+        public static MasterDetailView MasterDetail { get; set; }
+
+        public async static Task NavigateMasterDetail(Page page)
+        {
+            App.MasterDetail.IsPresented = false;
+            await App.MasterDetail.Detail.Navigation.PushAsync(page);
+        }
         public App()
         {
             InitializeComponent();
@@ -25,6 +34,7 @@ namespace TeLiga
                 {
                     MainPage = new MasterDetailView();
                 });
+            
         }
 
         protected override void OnSleep()
