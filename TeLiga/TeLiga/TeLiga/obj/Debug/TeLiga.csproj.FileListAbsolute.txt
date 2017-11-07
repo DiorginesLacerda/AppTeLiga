@@ -19,4 +19,3 @@ C:\Users\Diorgines\Source\Repos\AppTeLiga\TeLiga\TeLiga\TeLiga\obj\Debug\TeLiga.
 C:\Users\Diorgines\Source\Repos\AppTeLiga\TeLiga\TeLiga\TeLiga\obj\Debug\TeLiga.Views.NewAccountEditView.xaml.g.cs
 C:\Users\Diorgines\Source\Repos\AppTeLiga\TeLiga\TeLiga\TeLiga\obj\Debug\TeLiga.dll
 C:\Users\Diorgines\Source\Repos\AppTeLiga\TeLiga\TeLiga\TeLiga\obj\Debug\TeLiga.pdb
-C:\Users\Diorgines\Source\Repos\AppTeLiga\TeLiga\TeLiga\TeLiga\obj\Debug\TeLiga.csprojResolveAssemblyReference.cache

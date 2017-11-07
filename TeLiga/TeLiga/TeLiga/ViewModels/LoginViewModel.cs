@@ -14,14 +14,32 @@ namespace TeLiga.ViewModels
         public ICommand LoginCommand { get; set; }
         public ICommand NewAccountCommand { get; set; }
         public ICommand RecoveryAccountCommand { get; set; }
-        
+        private string email;
+
+        public string Email
+        {
+            get { return email; }
+            set { email = value; }
+        }
+
+        private string password;
+
+        public string Pasword
+        {
+            get { return password; }
+            set { password = value; }
+        }
+
+
+
 
         public LoginViewModel()
         {
             LoginCommand = new Command(
                 ()=> 
                 {
-                    MessagingCenter.Send(this, "SucessLogin");
+
+                    MessagingCenter.Send<User>(new User {Email=email,Password=password}, "SucessLogin");
                 });
 
             NewAccountCommand = new Command(

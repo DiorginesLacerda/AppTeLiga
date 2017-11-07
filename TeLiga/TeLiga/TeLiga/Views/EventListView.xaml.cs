@@ -35,6 +35,7 @@ namespace TeLiga.Views
         protected override void OnDisappearing()
         {
             base.OnDisappearing();
+            MessagingCenter.Unsubscribe<EventVo>(this, "SelectedEvent");
         }
     }
 }

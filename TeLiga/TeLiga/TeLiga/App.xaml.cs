@@ -6,6 +6,7 @@ using TeLiga.Views;
 using TeLiga.ViewModels;
 using Xamarin.Forms;
 using System.Threading.Tasks;
+using TeLiga.Models;
 
 namespace TeLiga
 {
@@ -25,21 +26,16 @@ namespace TeLiga
 
             //MainPage = new TeLiga.MainPage();
             MainPage = new NavigationPage(new LoginView());
+           //MainPage = new LoginView();
         }
 
         protected override void OnStart()
         {
-            MessagingCenter.Subscribe<LoginViewModel>(this, "SucessLogin",
+            MessagingCenter.Subscribe<User>(this, "SucessLogin",
                 (msg) =>
                 {
                     MainPage = new MasterDetailView();
                 });
-            MessagingCenter.Subscribe<NewAccountEditViewModel>(this, "SucessLogin",
-                (msg) =>
-                {
-                    MainPage = new MasterDetailView();
-                });
-
         }
 
         protected override void OnSleep()
