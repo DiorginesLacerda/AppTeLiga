@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="TeLiga.Views.LoginView">
+             x:Class="TeLiga.Views.LoginView"
+             Title="Login">
     <ContentPage.Content>
         <StackLayout 
             Margin="10"
@@ -9,19 +10,25 @@
             <Image Source="logo.png"/>
             <Entry Placeholder="Usuário" Text="{Binding User}"/>
             <Entry Placeholder="Senha" Text="{Binding Password}" IsPassword="True"/>
-            <Button Text="Entrar" BackgroundColor="SkyBlue" Command="{Binding LoginCommand}"/>
-            <Button 
-                Text=" Criar Nova Conta"
-                BackgroundColor="White"
-                BorderWidth="0"
-                BorderRadius="0"
-                BorderColor="White"/>
+            <Button Text="Entrar"
+                    BackgroundColor="DeepSkyBlue"
+                    Command="{Binding LoginCommand}"/>
+            <Label Text="Criar nova Conta"
+                   x:Name="novaConta"
+                   HorizontalTextAlignment="Center"
+                   TextColor="DeepSkyBlue">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding NewAccountCommand}"/>
+                </Label.GestureRecognizers>
+            </Label>
+            <!--
             <StackLayout 
                 Orientation="Horizontal"
                 HorizontalOptions="CenterAndExpand">
                 <Button Text="Facebbok" HorizontalOptions="FillAndExpand"/>
                 <Button Text="Google" HorizontalOptions="FillAndExpand"/>
             </StackLayout>
+            -->
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

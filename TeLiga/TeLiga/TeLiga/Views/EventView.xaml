@@ -1,20 +1,43 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="TeLiga.Views.EventView">
+             x:Class="TeLiga.Views.EventView"
+             Title="Detalhes do Evento">
     <ContentPage.Content>
-        <StackLayout>
-            <TableView Intent="Form">
-                <TableSection Title="Evento">
-                    <TextCell Text="{Binding Title}"/>
-                    <TextCell Text="{Binding DateEvent, StringFormat='{0:dd/MM/yyyy hh:mm}'}"/>
-                    <TextCell Text="{Binding Description}"/>
-                    <TextCell Text="{Binding Place}"/>
-                    <TextCell Text="{Binding Adress}"/>
-                    <TextCell Text="{Binding City}"/>
-                    <SwitchCell Text="Alertar" On="{Binding Alert, Mode=TwoWay}"/>
-                </TableSection>
-            </TableView>
+        <StackLayout 
+            Margin="10"
+            VerticalOptions="FillAndExpand"
+            Spacing="20">
+            <Label Text="{Binding Title}"
+                   FontSize="Large" FontAttributes="Bold"
+                   HorizontalTextAlignment="Center"/>
+            <Label Text="{Binding DateEvent, StringFormat='{0:dd/MM/yyyy hh:mm}'}"
+                   FontAttributes="Bold"
+                   HorizontalTextAlignment="Center"/>
+            <Label Text="{Binding Description}"
+                   LineBreakMode="WordWrap"
+                   HorizontalTextAlignment="Center"
+                   />
+            <Label Text="{Binding Link}" TextColor="Blue">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding linkCommand}" />
+                </Label.GestureRecognizers>
+            </Label>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Local:" FontAttributes="Bold"/>
+                <Label Text="{Binding Place}"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Endereço:" FontAttributes="Bold"/>
+                <Label Text="{Binding Adress}"/>
+            </StackLayout>
+            <Label Text="{Binding City}"
+                   FontAttributes="Bold"
+                   FontSize="Medium"/>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Receber Alerta"/>
+                <Switch IsToggled="{Binding Alert, Mode=TwoWay}" />
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -1,4 +1,3 @@
-C:\Users\Diorgines\Source\Repos\AppTeLiga\TeLiga\TeLiga\TeLiga.Android\obj\Debug\TeLiga.Android.csprojResolveAssemblyReference.cache
 C:\Users\Diorgines\Source\Repos\AppTeLiga\TeLiga\TeLiga\TeLiga.Android\bin\Debug\TeLiga.Android.dll
 C:\Users\Diorgines\Source\Repos\AppTeLiga\TeLiga\TeLiga\TeLiga.Android\bin\Debug\TeLiga.Android.pdb
 C:\Users\Diorgines\Source\Repos\AppTeLiga\TeLiga\TeLiga\TeLiga.Android\bin\Debug\TeLiga.Android.apk
@@ -19,11 +18,16 @@ C:\Users\Diorgines\Source\Repos\AppTeLiga\TeLiga\TeLiga\TeLiga.Android\bin\Debug
 C:\Users\Diorgines\Source\Repos\AppTeLiga\TeLiga\TeLiga\TeLiga.Android\bin\Debug\Xamarin.Forms.Xaml.dll
 C:\Users\Diorgines\Source\Repos\AppTeLiga\TeLiga\TeLiga\TeLiga.Android\bin\Debug\TeLiga.pdb
 C:\Users\Diorgines\Source\Repos\AppTeLiga\TeLiga\TeLiga\TeLiga.Android\bin\Debug\FormsViewGroup.pdb
+C:\Users\Diorgines\Source\Repos\AppTeLiga\TeLiga\TeLiga\TeLiga.Android\bin\Debug\FormsViewGroup.dll.mdb
 C:\Users\Diorgines\Source\Repos\AppTeLiga\TeLiga\TeLiga\TeLiga.Android\bin\Debug\Xamarin.Forms.Core.pdb
 C:\Users\Diorgines\Source\Repos\AppTeLiga\TeLiga\TeLiga\TeLiga.Android\bin\Debug\Xamarin.Forms.Core.xml
+C:\Users\Diorgines\Source\Repos\AppTeLiga\TeLiga\TeLiga\TeLiga.Android\bin\Debug\Xamarin.Forms.Core.dll.mdb
 C:\Users\Diorgines\Source\Repos\AppTeLiga\TeLiga\TeLiga\TeLiga.Android\bin\Debug\Xamarin.Forms.Platform.Android.pdb
+C:\Users\Diorgines\Source\Repos\AppTeLiga\TeLiga\TeLiga\TeLiga.Android\bin\Debug\Xamarin.Forms.Platform.Android.dll.mdb
 C:\Users\Diorgines\Source\Repos\AppTeLiga\TeLiga\TeLiga\TeLiga.Android\bin\Debug\Xamarin.Forms.Xaml.pdb
 C:\Users\Diorgines\Source\Repos\AppTeLiga\TeLiga\TeLiga\TeLiga.Android\bin\Debug\Xamarin.Forms.Xaml.xml
+C:\Users\Diorgines\Source\Repos\AppTeLiga\TeLiga\TeLiga\TeLiga.Android\bin\Debug\Xamarin.Forms.Xaml.dll.mdb
+C:\Users\Diorgines\Source\Repos\AppTeLiga\TeLiga\TeLiga\TeLiga.Android\obj\Debug\TeLiga.Android.csprojResolveAssemblyReference.cache
 C:\Users\Diorgines\Source\Repos\AppTeLiga\TeLiga\TeLiga\TeLiga.Android\obj\Debug\TeLiga.Android.dll
 C:\Users\Diorgines\Source\Repos\AppTeLiga\TeLiga\TeLiga\TeLiga.Android\obj\Debug\TeLiga.Android.pdb
 C:\Users\Diorgines\Source\Repos\AppTeLiga\TeLiga\TeLiga\TeLiga.Android\obj\Debug\android\bin\TeLiga.Android.apk
@@ -37,10 +41,6 @@ C:\Users\Diorgines\Source\Repos\AppTeLiga\TeLiga\TeLiga\TeLiga.Android\obj\Debug
 C:\Users\Diorgines\Source\Repos\AppTeLiga\TeLiga\TeLiga\TeLiga.Android\obj\Debug\R.cs.flag
 C:\Users\Diorgines\Source\Repos\AppTeLiga\TeLiga\TeLiga\TeLiga.Android\obj\Debug\uploadflags.txt
 C:\Users\Diorgines\Source\Repos\AppTeLiga\TeLiga\TeLiga\TeLiga.Android\bin\Debug\TeLiga.dll.mdb
-C:\Users\Diorgines\Source\Repos\AppTeLiga\TeLiga\TeLiga\TeLiga.Android\bin\Debug\FormsViewGroup.dll.mdb
-C:\Users\Diorgines\Source\Repos\AppTeLiga\TeLiga\TeLiga\TeLiga.Android\bin\Debug\Xamarin.Forms.Core.dll.mdb
-C:\Users\Diorgines\Source\Repos\AppTeLiga\TeLiga\TeLiga\TeLiga.Android\bin\Debug\Xamarin.Forms.Platform.Android.dll.mdb
-C:\Users\Diorgines\Source\Repos\AppTeLiga\TeLiga\TeLiga\TeLiga.Android\bin\Debug\Xamarin.Forms.Xaml.dll.mdb
 C:\Users\Diorgines\Source\Repos\AppTeLiga\TeLiga\TeLiga\TeLiga.Android\bin\Debug\TeLiga.Android.dll.mdb
 C:\Users\Diorgines\Source\Repos\AppTeLiga\TeLiga\TeLiga\TeLiga.Android\obj\Debug\android\assets\FormsViewGroup.dll.mdb
 C:\Users\Diorgines\Source\Repos\AppTeLiga\TeLiga\TeLiga\TeLiga.Android\obj\Debug\android\assets\TeLiga.Android.dll.mdb

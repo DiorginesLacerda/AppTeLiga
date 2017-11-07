@@ -33,13 +33,13 @@ namespace TeLiga.ViewModels
 
         public string Link
         {
-            get { return this.Link; }
+            get { return this.EventVo.Link; }
             private set {  }
         }
 
         public string Place
         {
-            get { return this.EventVo.Link; }
+            get { return this.EventVo.Place; }
             private set { }
         }
 
@@ -63,10 +63,6 @@ namespace TeLiga.ViewModels
             get { return this.EventVo.Alert; }
             set {  }
         }
-
-
-
-
 
         public EventViewModel(EventVo eventVo)
         {

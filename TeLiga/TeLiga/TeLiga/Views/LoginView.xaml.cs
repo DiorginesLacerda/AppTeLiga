@@ -13,11 +13,13 @@ namespace TeLiga.Views
     public partial class LoginView : ContentPage
     {
         public LoginViewModel ViewModel { get; set; }
+        
         public LoginView()
         {
             InitializeComponent();
             this.ViewModel = new LoginViewModel();
             this.BindingContext = this.ViewModel;
         }
+
     }
 }
