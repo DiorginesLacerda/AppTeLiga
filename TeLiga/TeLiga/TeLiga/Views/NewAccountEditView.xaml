@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TeLiga.Views.NewAccountEditView">
+    <ContentPage.Content>
+        <StackLayout 
+            Margin="25">
+            <TableView HorizontalOptions="FillAndExpand">
+                <TableRoot>
+                    <TableSection>
+                        <EntryCell Label="Nome Completo:"/>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="Data de Nascimento:" VerticalTextAlignment="Center"/>
+                                <DatePicker Margin="12,0,0,0"/>
+                            </StackLayout>
+                        </ViewCell>
+                        <EntryCell Label="CPF:" Keyboard="Telephone"/>
+                        <EntryCell Label="Email:" Keyboard="Email" HorizontalTextAlignment="Start"/>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="Cidade:" VerticalTextAlignment="Center"/>
+                                <Picker HorizontalOptions="FillAndExpand">
+                                    <Picker.Items>
+                                        <x:String>Gravataí</x:String>
+                                        <x:String>Glorinha</x:String>
+                                    </Picker.Items>
+                                </Picker>
+                            </StackLayout>
+                        </ViewCell>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="UF:" VerticalTextAlignment="Center"/>
+                                <Picker HorizontalOptions="FillAndExpand">
+                                    <Picker.Items>
+                                        <x:String>RS</x:String>
+                                        <x:String>SC</x:String>
+                                    </Picker.Items>
+                                </Picker>
+                            </StackLayout>
+                        </ViewCell>
+                        <EntryCell Label="Senha:"/>
+                        <EntryCell Label="Confirme a senha:"/>
+                    </TableSection>
+                </TableRoot>
+            </TableView>
+            <Button Text="Salvar" Command="{Binding SaveAccountCommand}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

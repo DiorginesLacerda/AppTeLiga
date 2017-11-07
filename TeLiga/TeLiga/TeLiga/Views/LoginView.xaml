@@ -14,11 +14,17 @@
                     BackgroundColor="DeepSkyBlue"
                     Command="{Binding LoginCommand}"/>
             <Label Text="Criar nova Conta"
-                   x:Name="novaConta"
                    HorizontalTextAlignment="Center"
                    TextColor="DeepSkyBlue">
                 <Label.GestureRecognizers>
                     <TapGestureRecognizer Command="{Binding NewAccountCommand}"/>
+                </Label.GestureRecognizers>
+            </Label>
+            <Label Text="Recuperar Senha"
+                   HorizontalTextAlignment="Center"
+                   >
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding RecoveryAccountCommand}"/>
                 </Label.GestureRecognizers>
             </Label>
             <!--

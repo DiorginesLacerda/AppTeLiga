@@ -21,5 +21,20 @@ namespace TeLiga.Views
             this.BindingContext = this.ViewModel;
         }
 
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            MessagingCenter.Subscribe<LoginViewModel>(this, "CreateNewAccount",
+                (msg) =>
+                {
+                    Navigation.PushAsync(new NewAccountEditView());
+                });
+        }
+        protected override void OnDisappearing()
+        {
+            base.OnDisappearing();
+            MessagingCenter.Unsubscribe<LoginViewModel>(this, "CreateNewAccount");
+        }
+
     }
 }

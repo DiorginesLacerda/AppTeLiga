@@ -24,7 +24,7 @@ namespace TeLiga
             InitializeComponent();
 
             //MainPage = new TeLiga.MainPage();
-            MainPage = new LoginView();
+            MainPage = new NavigationPage(new LoginView());
         }
 
         protected override void OnStart()
@@ -34,7 +34,12 @@ namespace TeLiga
                 {
                     MainPage = new MasterDetailView();
                 });
-            
+            MessagingCenter.Subscribe<NewAccountEditViewModel>(this, "SucessLogin",
+                (msg) =>
+                {
+                    MainPage = new MasterDetailView();
+                });
+
         }
 
         protected override void OnSleep()

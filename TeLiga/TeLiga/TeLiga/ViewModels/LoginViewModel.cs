@@ -13,6 +13,8 @@ namespace TeLiga.ViewModels
     {
         public ICommand LoginCommand { get; set; }
         public ICommand NewAccountCommand { get; set; }
+        public ICommand RecoveryAccountCommand { get; set; }
+        
 
         public LoginViewModel()
         {
@@ -26,7 +28,11 @@ namespace TeLiga.ViewModels
                 ()=> 
                 {
                     //Mensagem para teste, deve ser Alterada
-                    MessagingCenter.Send(this,"SucessLogin");
+                    MessagingCenter.Send(this,"CreateNewAccount");
+                });
+            RecoveryAccountCommand = new Command(
+                ()=> 
+                {
                 });
 
         }
