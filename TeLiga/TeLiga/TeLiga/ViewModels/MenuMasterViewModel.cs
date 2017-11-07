@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
+using Xamarin.Forms.PlatformConfiguration;
 
 namespace TeLiga.ViewModels
 {
@@ -20,7 +21,12 @@ namespace TeLiga.ViewModels
                 {
                     MessagingCenter.Send(this, "CreateNewEvent");
                 });
-            this.ExitCommand = new Command(() => { });
+            this.ExitCommand = new Command(
+                () => 
+                {
+                    
+                });
+            
         }
 
     }

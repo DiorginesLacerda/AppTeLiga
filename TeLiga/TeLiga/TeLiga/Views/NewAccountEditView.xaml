@@ -4,21 +4,21 @@
              x:Class="TeLiga.Views.NewAccountEditView">
     <ContentPage.Content>
         <StackLayout 
-            Margin="25">
-            <TableView HorizontalOptions="FillAndExpand">
+            Margin="20">
+            <TableView>
                 <TableRoot>
                     <TableSection>
-                        <EntryCell Label="Nome Completo:"/>
+                        <EntryCell Label="Nome:" />
                         <ViewCell>
-                            <StackLayout Orientation="Horizontal">
-                                <Label Text="Data de Nascimento:" VerticalTextAlignment="Center"/>
-                                <DatePicker Margin="12,0,0,0"/>
+                            <StackLayout Orientation="Horizontal" Margin="12,0,0,0">
+                                <Label Text="Data de Nascimento:" VerticalOptions="Center"/>
+                                <DatePicker />
                             </StackLayout>
                         </ViewCell>
-                        <EntryCell Label="CPF:" Keyboard="Telephone"/>
+                        <EntryCell Label="CPF:" Keyboard="Numeric"/>
                         <EntryCell Label="Email:" Keyboard="Email" HorizontalTextAlignment="Start"/>
                         <ViewCell>
-                            <StackLayout Orientation="Horizontal">
+                            <StackLayout Orientation="Horizontal" Margin="12,0,0,0">
                                 <Label Text="Cidade:" VerticalTextAlignment="Center"/>
                                 <Picker HorizontalOptions="FillAndExpand">
                                     <Picker.Items>
@@ -29,7 +29,7 @@
                             </StackLayout>
                         </ViewCell>
                         <ViewCell>
-                            <StackLayout Orientation="Horizontal">
+                            <StackLayout Orientation="Horizontal" Margin="12,0,0,0">
                                 <Label Text="UF:" VerticalTextAlignment="Center"/>
                                 <Picker HorizontalOptions="FillAndExpand">
                                     <Picker.Items>

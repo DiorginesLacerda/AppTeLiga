@@ -6,13 +6,16 @@
     <ContentPage.Content>
         <StackLayout
             VerticalOptions="Center"
-            Spacing="20">
-            <Label Text="Criar novo Evento">
+            Spacing="20"
+            Margin="30">
+            <Label Text="Criar novo Evento"
+                   FontSize="Large" FontAttributes="Bold">
                 <Label.GestureRecognizers>
                     <TapGestureRecognizer Command="{Binding NewEventCommand}"/>
                 </Label.GestureRecognizers>
             </Label>
-            <Label Text="Sair">
+            <Label Text="Perfil - não IMplementado"/>
+            <Label Text="Sair não Imlementado" >
                 <Label.GestureRecognizers>
                     <TapGestureRecognizer Command="{Binding ExitCommand}"/>
                 </Label.GestureRecognizers>
