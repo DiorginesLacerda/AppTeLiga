@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TeLiga.Views.ProfileView">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+            <TableView>
+                <TableRoot>
+                    <TableSection Title="Dados Pessoais">
+                        <EntryCell Label="Nome:" />
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" Margin="12,0,0,0">
+                                <Label Text="Data de Nascimento:" VerticalOptions="Center"/>
+                                <DatePicker />
+                            </StackLayout>
+                        </ViewCell>
+                        <EntryCell Label="CPF:" Keyboard="Numeric"/>
+                        <EntryCell Label="Email:" Keyboard="Email" HorizontalTextAlignment="Start"/>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" Margin="12,0,0,0">
+                                <Label Text="Cidade:" VerticalTextAlignment="Center"/>
+                                <Picker HorizontalOptions="FillAndExpand">
+                                    <Picker.Items>
+                                        <x:String>Gravataí</x:String>
+                                        <x:String>Glorinha</x:String>
+                                    </Picker.Items>
+                                </Picker>
+                            </StackLayout>
+                        </ViewCell>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" Margin="12,0,0,0">
+                                <Label Text="UF:" VerticalTextAlignment="Center"/>
+                                <Picker HorizontalOptions="FillAndExpand">
+                                    <Picker.Items>
+                                        <x:String>RS</x:String>
+                                        <x:String>SC</x:String>
+                                    </Picker.Items>
+                                </Picker>
+                            </StackLayout>
+                        </ViewCell>
+                        <EntryCell Label="Senha:"/>
+                        <EntryCell Label="Confirme a senha:"/>
+                    </TableSection>
+                </TableRoot>
+            </TableView>
+            <Button Text="Salvar" Command="{Binding SaveProfileCommand}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

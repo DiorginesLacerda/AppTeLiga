@@ -21,3 +21,4 @@ C:\Users\Diorgines\Source\Repos\AppTeLiga\TeLiga\TeLiga\TeLiga\obj\Debug\TeLiga.
 C:\Users\Diorgines\Source\Repos\AppTeLiga\TeLiga\TeLiga\TeLiga\obj\Debug\TeLiga.pdb
 C:\Users\Diorgines\Source\Repos\AppTeLiga\TeLiga\TeLiga\TeLiga\obj\Debug\TeLiga.csprojResolveAssemblyReference.cache
 C:\Users\Diorgines\Source\Repos\AppTeLiga\TeLiga\TeLiga\TeLiga\obj\Debug\TeLiga.Views.RecoveryPasswordView.xaml.g.cs
+C:\Users\Diorgines\Source\Repos\AppTeLiga\TeLiga\TeLiga\TeLiga\obj\Debug\TeLiga.Views.ProfileView.xaml.g.cs

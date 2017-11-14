@@ -12,6 +12,7 @@ namespace TeLiga.ViewModels
     class MenuMasterViewModel
     {
         public ICommand NewEventCommand { get; set; }
+        public ICommand ProfileCommand { get; set; }
         public ICommand ExitCommand { get; set; }
 
         public MenuMasterViewModel()
@@ -21,6 +22,13 @@ namespace TeLiga.ViewModels
                 {
                     MessagingCenter.Send(this, "CreateNewEvent");
                 });
+
+            this.ProfileCommand = new Command(
+                () =>
+                {
+                    MessagingCenter.Send(this, "CallProfileView");
+                });
+
             this.ExitCommand = new Command(
                 () => 
                 {

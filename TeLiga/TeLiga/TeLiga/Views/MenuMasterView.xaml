@@ -14,7 +14,12 @@
                     <TapGestureRecognizer Command="{Binding NewEventCommand}"/>
                 </Label.GestureRecognizers>
             </Label>
-            <Label Text="Perfil - não IMplementado"/>
+            <Label Text="Perfil"
+                   FontSize="Large" FontAttributes="Bold">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding ProfileCommand}"/>
+                </Label.GestureRecognizers>
+            </Label>
             <Label Text="Sair não Imlementado" >
                 <Label.GestureRecognizers>
                     <TapGestureRecognizer Command="{Binding ExitCommand}"/>

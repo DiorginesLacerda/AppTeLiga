@@ -30,11 +30,18 @@ namespace TeLiga.Views
                     await App.NavigateMasterDetail(new EventEditView());
                    // this.Detail = new NavigationPage(new EventEditView());
                 });
+
+            MessagingCenter.Subscribe<MenuMasterViewModel>(this, "CallProfileView",
+                async(msg) =>
+                {
+                    await App.NavigateMasterDetail(new ProfileView());
+                });
         }
         protected override void OnDisappearing()
         {
             base.OnDisappearing();
             MessagingCenter.Unsubscribe<MenuMasterViewModel>(this, "CreateNewEvent");
+            MessagingCenter.Unsubscribe<MenuMasterViewModel>(this, "CallProfileView");
         }
     }
 }
