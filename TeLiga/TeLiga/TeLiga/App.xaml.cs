@@ -23,10 +23,7 @@ namespace TeLiga
         public App()
         {
             InitializeComponent();
-
-            //MainPage = new TeLiga.MainPage();
             MainPage = new NavigationPage(new LoginView());
-           //MainPage = new LoginView();
         }
 
         protected override void OnStart()

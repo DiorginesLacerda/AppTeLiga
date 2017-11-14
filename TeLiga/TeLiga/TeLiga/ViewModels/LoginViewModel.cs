@@ -51,6 +51,7 @@ namespace TeLiga.ViewModels
             RecoveryAccountCommand = new Command(
                 ()=> 
                 {
+                    MessagingCenter.Send(this, "RecoveryPassword");
                 });
 
         }

@@ -29,11 +29,17 @@ namespace TeLiga.Views
                 {
                     Navigation.PushAsync(new NewAccountEditView());
                 });
+            MessagingCenter.Subscribe<LoginViewModel>(this, "RecoveryPassword",
+                (msg) =>
+                {
+                    Navigation.PushAsync(new RecoveryPasswordView());
+                });
         }
         protected override void OnDisappearing()
         {
             base.OnDisappearing();
             MessagingCenter.Unsubscribe<LoginViewModel>(this, "CreateNewAccount");
+            MessagingCenter.Unsubscribe<LoginViewModel>(this, "RecoveryPassword");
         }
 
     }
