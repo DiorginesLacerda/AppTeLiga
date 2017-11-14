@@ -35,7 +35,7 @@
                    FontAttributes="Bold"
                    FontSize="Medium"/>
             <StackLayout Orientation="Horizontal">
-                <Label Text="Receber Alerta"/>
+                <Label Text="Salvar na minha Agenda"/>
                 <Switch IsToggled="{Binding Alert, Mode=TwoWay}" />
             </StackLayout>
         </StackLayout>

@@ -34,7 +34,7 @@
                     </TableSection>
                 </TableRoot>
             </TableView>
-            <Button Text="Enviar - Não Implementado" Command="{Binding SubmitEventCommand}"/>
+            <Button Text="Enviar" Command="{Binding SubmitEventCommand}"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

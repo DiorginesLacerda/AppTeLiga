@@ -19,5 +19,34 @@ namespace TeLiga.Views
             this.ViewModel = new ProfileViewModel();
             this.BindingContext = this.ViewModel;
 		}
-	}
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            MessagingCenter.Subscribe<ProfileViewModel>(this, "SaveProfile",
+                async(msg) =>
+                {
+                    var confirma = await DisplayAlert("Salvar Perfil", "Deseja salvar as altereções?", "Sim", "Não");
+
+                    if (confirma)
+                    {
+                        this.ViewModel.SaveProfile();
+                    }
+                });
+
+            MessagingCenter.Subscribe<ProfileViewModel>(this, "ProfileSaved",
+                (msg) =>
+                {
+                    DisplayAlert("Sucesso!", "Alterações Salvas com Sucesso", "ok");
+                });
+             
+
+        }
+
+        protected override void OnDisappearing()
+        {
+            base.OnDisappearing();
+            MessagingCenter.Unsubscribe<ProfileViewModel>(this, "SaveProfile");
+        }
+    }
 }

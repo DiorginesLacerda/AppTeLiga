@@ -12,12 +12,17 @@ namespace TeLiga.ViewModels
     {
         public ICommand SaveProfileCommand { get; set; }
 
+        public void SaveProfile()
+        {
+            MessagingCenter.Send(this, "ProfileSaved");
+        }
+
         public ProfileViewModel()
         {
             this.SaveProfileCommand = new Command(
                 () =>
                 {
-
+                    MessagingCenter.Send(this, "SaveProfile");
                 });
         }
     }
