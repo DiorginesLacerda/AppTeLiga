@@ -9,13 +9,13 @@ using TeLiga.Models;
 
 namespace TeLiga.Services
 {
-    public class LoginService
+    public class LoginService:RestService
     {
-        const string URL_POST_LOGIN = "http://teligaoservatoriosocial-com-br.umbler.net/api/ApiUsuario/Login";
+        const string POST_LOGIN_ENDPOINT = "/Login";
 
         public async Task <User> Login(string email, string password)
         {
-            var client = new HttpClient();
+            //var client = new HttpClient();
             
             var body = new FormUrlEncodedContent(new[]
             {
@@ -23,13 +23,16 @@ namespace TeLiga.Services
                 new KeyValuePair<string, string>("Senha", password)
             });
 
-            var uri = new Uri(URL_POST_LOGIN);
+            //var uri = new Uri(URL_POST_LOGIN);
+            var uri = new Uri(URL_BASE + POST_LOGIN_ENDPOINT);
             
             var result = await client.PostAsync(uri, body);
 
-            if (result.IsSuccessStatusCode)
+            var contentResult = await result.Content.ReadAsStringAsync();
+
+            if (!contentResult.Equals("null") )
             {
-                var contentResult = await result.Content.ReadAsStringAsync();
+                
                 var dataResult = JsonConvert.DeserializeObject<ResultLogin>(contentResult);
 
                 var userLogin = dataResult.Entidade;
@@ -47,7 +50,7 @@ namespace TeLiga.Services
             }
             else
             {
-                throw new Exception("Falha no Login");
+                throw new Exception("Usuário ou senha Incorretos");
             }
         }
     }

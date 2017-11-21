@@ -15,7 +15,8 @@ namespace TeLiga.ViewModels
         public ICommand LoginCommand { get; set; }
         public ICommand NewAccountCommand { get; set; }
         public ICommand RecoveryAccountCommand { get; set; }
-        private string email;
+
+        private string email = "admin@hotmail.com";
 
         public string Email
         {
@@ -23,9 +24,9 @@ namespace TeLiga.ViewModels
             set { email = value; }
         }
 
-        private string password;
+        private string password = "admin";
 
-        public string Pasword
+        public string Password
         {
             get { return password; }
             set { password = value; }
@@ -42,14 +43,14 @@ namespace TeLiga.ViewModels
                     try
                     {
                         var loginService = new LoginService();
-                        var result = await loginService.Login("admin@hotmail.com", "admin");
+                        var result = await loginService.Login(email, password);
                         MessagingCenter.Send<User>(result, "SucessLogin");
 
                     }
-                    catch (Exception)
+                    catch (Exception e)
                     {
 
-                        throw;
+                        MessagingCenter.Send<string>(e.Message, "FailLogin");
                     }
 
                     

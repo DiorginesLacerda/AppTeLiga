@@ -29,10 +29,17 @@ namespace TeLiga.Views
                 {
                     Navigation.PushAsync(new NewAccountEditView());
                 });
+
             MessagingCenter.Subscribe<LoginViewModel>(this, "RecoveryPassword",
                 (msg) =>
                 {
                     Navigation.PushAsync(new RecoveryPasswordView());
+                });
+
+            MessagingCenter.Subscribe<string>(this, "FailLogin",
+                async(msg) =>
+                {
+                    await DisplayAlert("Falha no Login", msg+"\nTente Novamente mais tarde", "Ok");
                 });
         }
         protected override void OnDisappearing()
@@ -40,6 +47,7 @@ namespace TeLiga.Views
             base.OnDisappearing();
             MessagingCenter.Unsubscribe<LoginViewModel>(this, "CreateNewAccount");
             MessagingCenter.Unsubscribe<LoginViewModel>(this, "RecoveryPassword");
+            MessagingCenter.Unsubscribe<LoginViewModel>(this, "FailLogin");
         }
 
     }

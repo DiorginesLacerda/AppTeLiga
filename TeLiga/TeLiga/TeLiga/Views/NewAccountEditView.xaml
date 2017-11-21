@@ -8,19 +8,19 @@
             <TableView>
                 <TableRoot>
                     <TableSection>
-                        <EntryCell Label="Nome:" />
+                        <EntryCell Label="Nome:" Text="{Binding Name}" />
                         <ViewCell>
                             <StackLayout Orientation="Horizontal" Margin="12,0,0,0">
                                 <Label Text="Data de Nascimento:" VerticalOptions="Center"/>
-                                <DatePicker />
+                                <DatePicker Date="{Binding Birth}"/>
                             </StackLayout>
                         </ViewCell>
-                        <EntryCell Label="CPF:" Keyboard="Numeric"/>
-                        <EntryCell Label="Email:" Keyboard="Email" HorizontalTextAlignment="Start"/>
+                        <EntryCell Label="CPF:" Keyboard="Numeric" Text="{Binding Cpf}"/>
+                        <EntryCell Label="Email:" Keyboard="Email" Text="{Binding Email}" HorizontalTextAlignment="Start"/>
                         <ViewCell>
                             <StackLayout Orientation="Horizontal" Margin="12,0,0,0">
                                 <Label Text="Cidade:" VerticalTextAlignment="Center"/>
-                                <Picker HorizontalOptions="FillAndExpand">
+                                <Picker HorizontalOptions="FillAndExpand" SelectedItem="{Binding City}">
                                     <Picker.Items>
                                         <x:String>Gravataí</x:String>
                                         <x:String>Glorinha</x:String>
@@ -31,7 +31,7 @@
                         <ViewCell>
                             <StackLayout Orientation="Horizontal" Margin="12,0,0,0">
                                 <Label Text="UF:" VerticalTextAlignment="Center"/>
-                                <Picker HorizontalOptions="FillAndExpand">
+                                <Picker HorizontalOptions="FillAndExpand" SelectedItem="{Binding UF}">
                                     <Picker.Items>
                                         <x:String>RS</x:String>
                                         <x:String>SC</x:String>
@@ -39,8 +39,26 @@
                                 </Picker>
                             </StackLayout>
                         </ViewCell>
-                        <EntryCell Label="Senha:"/>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" Margin="12,0,0,0">
+                                <Label Text="Senha:" VerticalTextAlignment="Center"/>
+                                <Entry Text="{Binding Password}" IsPassword="True"
+                                       HorizontalOptions="FillAndExpand"
+                                       />
+                            </StackLayout>
+                        </ViewCell>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" Margin="12,0,0,0">
+                                <Label Text="Confirme:" VerticalTextAlignment="Center"/>
+                                <Entry Text="{Binding ConfirmPassword}" IsPassword="True"
+                                       HorizontalOptions="FillAndExpand"
+                                       />
+                            </StackLayout>
+                        </ViewCell>
+                        <!--
+                        <EntryCell Label="Senha:" Text="{Binding Password}"/>
                         <EntryCell Label="Confirme a senha:"/>
+                        -->
                     </TableSection>
                 </TableRoot>
             </TableView>
