@@ -17,4 +17,6 @@ namespace TeLiga.Models
         public string UF { get; set; }
         public bool Moderator { get; set; }
     }
+
+    
 }

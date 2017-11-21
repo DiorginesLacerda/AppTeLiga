@@ -46,3 +46,10 @@ C:\Users\Diorgines\Source\Repos\AppTeLiga\TeLiga\TeLiga\TeLiga.Android\obj\Debug
 C:\Users\Diorgines\Source\Repos\AppTeLiga\TeLiga\TeLiga\TeLiga.Android\obj\Debug\android\assets\Mono.Security.dll
 C:\Users\Diorgines\Source\Repos\AppTeLiga\TeLiga\TeLiga\TeLiga.Android\obj\Debug\android\assets\System.Resources.ResourceManager.dll
 C:\Users\Diorgines\Source\Repos\AppTeLiga\TeLiga\TeLiga\TeLiga.Android\obj\Debug\android\assets\System.Diagnostics.Tools.dll
+C:\Users\Diorgines\Source\Repos\AppTeLiga\TeLiga\TeLiga\TeLiga.Android\obj\Debug\android\assets\Newtonsoft.Json.dll
+C:\Users\Diorgines\Source\Repos\AppTeLiga\TeLiga\TeLiga\TeLiga.Android\obj\Debug\android\assets\System.Xml.XDocument.dll
+C:\Users\Diorgines\Source\Repos\AppTeLiga\TeLiga\TeLiga\TeLiga.Android\obj\Debug\android\assets\System.Runtime.Serialization.Primitives.dll
+C:\Users\Diorgines\Source\Repos\AppTeLiga\TeLiga\TeLiga\TeLiga.Android\obj\Debug\android\assets\System.Text.Encoding.dll
+C:\Users\Diorgines\Source\Repos\AppTeLiga\TeLiga\TeLiga\TeLiga.Android\obj\Debug\android\assets\System.Text.Encoding.Extensions.dll
+C:\Users\Diorgines\Source\Repos\AppTeLiga\TeLiga\TeLiga\TeLiga.Android\obj\Debug\android\assets\Microsoft.CSharp.dll
+C:\Users\Diorgines\Source\Repos\AppTeLiga\TeLiga\TeLiga\TeLiga.Android\obj\Debug\android\assets\Mono.CSharp.dll

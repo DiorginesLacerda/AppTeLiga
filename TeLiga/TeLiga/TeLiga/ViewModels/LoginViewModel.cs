@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using TeLiga.Models;
+using TeLiga.Services;
 using Xamarin.Forms;
 
 namespace TeLiga.ViewModels
@@ -36,10 +37,22 @@ namespace TeLiga.ViewModels
         public LoginViewModel()
         {
             LoginCommand = new Command(
-                ()=> 
+                async()=> 
                 {
+                    try
+                    {
+                        var loginService = new LoginService();
+                        var result = await loginService.Login("admin@hotmail.com", "admin");
+                        MessagingCenter.Send<User>(result, "SucessLogin");
 
-                    MessagingCenter.Send<User>(new User {Email=email,Password=password}, "SucessLogin");
+                    }
+                    catch (Exception)
+                    {
+
+                        throw;
+                    }
+
+                    
                 });
 
             NewAccountCommand = new Command(
@@ -56,4 +69,6 @@ namespace TeLiga.ViewModels
 
         }
     }
+
+    
 }
