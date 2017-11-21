@@ -31,4 +31,3 @@ C:\Users\Diorgines\Source\Repos\AppTeLiga\TeLiga\TeLiga\TeLiga\obj\Debug\TeLiga.
 C:\Users\Diorgines\Source\Repos\AppTeLiga\TeLiga\TeLiga\TeLiga\obj\Debug\TeLiga.pdb
 C:\Users\Diorgines\Source\Repos\AppTeLiga\TeLiga\TeLiga\TeLiga\bin\Debug\Newtonsoft.Json.dll
 C:\Users\Diorgines\Source\Repos\AppTeLiga\TeLiga\TeLiga\TeLiga\bin\Debug\Newtonsoft.Json.xml
-C:\Users\Diorgines\Source\Repos\AppTeLiga\TeLiga\TeLiga\TeLiga\obj\Debug\TeLiga.csprojResolveAssemblyReference.cache
