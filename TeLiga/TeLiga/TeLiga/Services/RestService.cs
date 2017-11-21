@@ -10,7 +10,7 @@ namespace TeLiga.Services
 {
     public  abstract class RestService
     {
-        protected const string URL_BASE = "http://teligaoservatoriosocial-com-br.umbler.net/api/ApiUsuario";
+        protected const string URL_BASE = "http://teligaoservatoriosocial-com-br.umbler.net/api";
 
         protected static HttpClient client = new HttpClient();
     }

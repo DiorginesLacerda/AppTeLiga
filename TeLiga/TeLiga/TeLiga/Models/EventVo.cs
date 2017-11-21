@@ -17,4 +17,33 @@ namespace TeLiga.Models
         public string City { get; set; }
         public bool Alert { get; set; }
     }
+
+    public class ResultEvent
+    {
+        public int Post_Id { get; set; }
+        public int Usuario_Id { get; set; }
+        public string Guid { get; set; }
+        public string Titulo { get; set; }
+        public string Descricao { get; set; }
+        public string Local { get; set; }
+        public string Data_Votacao { get; set; }
+        public string Data_Criacao { get; set; }
+        public string Data_Alteracao { get; set; }
+        public int Post_Semelhante_Repetido { get; set; }
+        public string Status_Post { get; set; }
+        public string Observacao_Moderador { get; set; }
+
+        public EventVo getEventVo()
+        {
+            return new EventVo
+            {
+                Title = Titulo,
+                DateEvent = Convert.ToDateTime(Data_Votacao),
+                Description = Descricao,
+                Link = "google.com.br",
+                Place = Local
+            };
+
+        }
+    }
 }

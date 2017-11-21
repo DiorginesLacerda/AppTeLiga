@@ -19,17 +19,21 @@ namespace TeLiga.Views
             InitializeComponent();
             this.ViewModel = new EventListViewModel();
             this.BindingContext = this.ViewModel;
-            this.ListEvent.ItemsSource = ViewModel.Events;
+            //this.ListEvent.ItemsSource = ViewModel.Events;
         }
 
-        protected override void OnAppearing()
+        protected async override void OnAppearing()
         {
+            
+            await this.ViewModel.GetListEvents();
+            this.ListEvent.ItemsSource = ViewModel.Events;
             base.OnAppearing();
             MessagingCenter.Subscribe<EventVo>(this, "SelectedEvent",
                 (msg)=> 
                 {
                     Navigation.PushAsync(new EventView(msg));
                 });
+            
         }
 
         protected override void OnDisappearing()

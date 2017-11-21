@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
@@ -10,10 +11,10 @@ namespace TeLiga.Services
 {
     public class NewAccountService : RestService
     {
-        const string NEWACCOUNT_ENDPOINT ="/Criar";
+        const string NEWACCOUNT_ENDPOINT = "/ApiUsuario/Criar";
         
 
-        public static async Task<bool> CreateNewAccount( User user)
+        public static async Task<User> CreateNewAccount( User user)
         {
             var body = new FormUrlEncodedContent(new[]
             {
@@ -26,12 +27,15 @@ namespace TeLiga.Services
             var uri = new Uri(URL_BASE+NEWACCOUNT_ENDPOINT);
 
             var result = await client.PostAsync(uri, body);
+            
 
             if (result.IsSuccessStatusCode)
             {
-                return true;
+                var contentResult = await result.Content.ReadAsStringAsync();
+                var dataResult = JsonConvert.DeserializeObject<UserLogin>(contentResult);
+                return dataResult.getUser();
             }
-            return false;
+            throw new Exception("Erro ao conectar com o servidor");
         }
 
     }

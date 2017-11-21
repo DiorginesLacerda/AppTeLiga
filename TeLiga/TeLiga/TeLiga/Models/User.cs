@@ -18,5 +18,31 @@ namespace TeLiga.Models
         public bool Moderator { get; set; }
     }
 
-    
+    public class UserLogin
+    {
+        public int Usuario_Id { get; set; }
+        public int Tipo_Cadastro { get; set; }
+        public string Guid { get; set; }
+        public string Nome { get; set; }
+        public string Estado { get; set; }
+        public string Cidade { get; set; }
+        public string Email { get; set; }
+        public string Senha { get; set; }
+        public string Data_Cadastro { get; set; }
+        public string Data_Alteracao { get; set; }
+        public int Ativo { get; set; }
+
+        public User getUser()
+        {
+            return new User
+            {
+                Name = Nome,
+                UF = Estado,
+                City = Cidade,
+                Email = Email,
+                Password =Senha,
+            };
+        }
+    }
+
 }

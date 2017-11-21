@@ -77,10 +77,10 @@ namespace TeLiga.ViewModels
             SaveAccountCommand = new Command(
                 async()=> 
                 {
-                    bool sucess = await NewAccountService.CreateNewAccount(this.User);
-                    if (sucess)
+                    var resultUser = await NewAccountService.CreateNewAccount(this.User);
+                    if (resultUser!=null)
                     {
-                        MessagingCenter.Send<User>(this.User, "SucessLogin");
+                        MessagingCenter.Send<User>(resultUser, "SucessLogin");
                     }
                     else
                     {

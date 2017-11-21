@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TeLiga.Models;
+using TeLiga.Services;
 using Xamarin.Forms;
 
 namespace TeLiga.ViewModels
@@ -28,10 +29,17 @@ namespace TeLiga.ViewModels
             }
         }
 
+        public async Task GetListEvents()
+        {
+            Events = await ListEventsService.GetEvents();
+        }
 
         public EventListViewModel()
         {
-            this.Events = new ObservableCollection<EventVo>
+            ListEventsService service = new ListEventsService();
+            
+
+            /*this.Events = new ObservableCollection<EventVo>
             {
                 new EventVo
                 {
@@ -293,9 +301,7 @@ namespace TeLiga.ViewModels
                     City = "TownsVile",
                     Alert = false
                 }
-
-
-            };
+            };*/
         }
     }
 }

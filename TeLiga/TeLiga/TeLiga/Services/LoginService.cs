@@ -11,7 +11,7 @@ namespace TeLiga.Services
 {
     public class LoginService:RestService
     {
-        const string POST_LOGIN_ENDPOINT = "/Login";
+        const string POST_LOGIN_ENDPOINT = "/ApiUsuario/Login";
 
         public async Task <User> Login(string email, string password)
         {
@@ -23,7 +23,7 @@ namespace TeLiga.Services
                 new KeyValuePair<string, string>("Senha", password)
             });
 
-            //var uri = new Uri(URL_POST_LOGIN);
+            
             var uri = new Uri(URL_BASE + POST_LOGIN_ENDPOINT);
             
             var result = await client.PostAsync(uri, body);
@@ -63,18 +63,5 @@ namespace TeLiga.Services
         public string Message_Error { get; set; }
     }
 
-    class UserLogin
-    {
-        public int Usuario_Id { get; set; }
-        public int Tipo_Cadastro { get; set; }
-        public string Guid { get; set; }
-        public string Nome { get; set; }
-        public string Estado { get; set; }
-        public string Cidade { get; set; }
-        public string Email { get; set; }
-        public string Senha { get; set; }
-        public string Data_Cadastro { get; set; }
-        public string Data_Alteracao { get; set; }
-        public int Ativo { get; set; }
-    }
+    
 }
