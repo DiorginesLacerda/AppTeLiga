@@ -3,6 +3,7 @@
   <!--suppress UsesMinSdkAttributes-->
   <uses-sdk android:minSdkVersion="15" />
   <uses-permission android:name="android.permission.INTERNET" />
+  <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
   <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
   <application android:label="TeLiga.Android" android:icon="@drawable/icon" android:name="android.app.Application" android:allowBackup="true" android:debuggable="true">
     <activity android:configChanges="orientation|screenSize" android:icon="@drawable/icon" android:label="TeLiga" android:theme="@style/MainTheme" android:name="md568a2615af6581b69431182f9a8c0c76f.MainActivity">
@@ -19,5 +20,6 @@
         <category android:name="mono.android.intent.category.SEPPUKU.TeLiga.Android" />
       </intent-filter>
     </receiver>
+    <meta-data android:name="android.support.VERSION" android:value="25.4.0" />
   </application>
 </manifest>

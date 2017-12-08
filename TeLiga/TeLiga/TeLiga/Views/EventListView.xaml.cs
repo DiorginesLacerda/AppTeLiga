@@ -14,10 +14,10 @@ namespace TeLiga.Views
     public partial class EventListView : ContentPage
     {
         public EventListViewModel ViewModel { get; set; }
-        public EventListView()
+        public EventListView(User user)
         {
             InitializeComponent();
-            this.ViewModel = new EventListViewModel();
+            this.ViewModel = new EventListViewModel(user);
             this.BindingContext = this.ViewModel;
             //this.ListEvent.ItemsSource = ViewModel.Events;
         }

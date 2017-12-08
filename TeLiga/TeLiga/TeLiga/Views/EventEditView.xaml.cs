@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TeLiga.Models;
 using TeLiga.ViewModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -12,10 +13,10 @@ namespace TeLiga.Views
     public partial class EventEditView : ContentPage
     {
         EventEditViewModel ViewModel;
-        public EventEditView()
+        public EventEditView(User user)
         {
             InitializeComponent();
-            this.ViewModel = new EventEditViewModel();
+            this.ViewModel = new EventEditViewModel(user);
             this.BindingContext = this.ViewModel;
         }
 
@@ -29,7 +30,7 @@ namespace TeLiga.Views
                         "Sim", "Não");
                     if (confirm)
                     {
-                        this.ViewModel.SubmitEvent();
+                        await ViewModel.SubmitEvent();
                     }
                 });
 
@@ -39,6 +40,12 @@ namespace TeLiga.Views
                     await DisplayAlert("Sucesso", "Seu evento foi enviado para a moderação", "Ok");
                     Navigation.RemovePage(this);
                 });
+
+            MessagingCenter.Subscribe<EventEditViewModel>(this, "FailSubmitEvent",
+                async (msg) =>
+                {
+                    await DisplayAlert("Falha", "Seu evento não pode ser enviado, por favor, tente mais tarde", "Ok");
+                });
         }
 
 
@@ -47,6 +54,7 @@ namespace TeLiga.Views
             base.OnDisappearing();
             MessagingCenter.Unsubscribe<EventEditViewModel>(this, "SubmitEvent");
             MessagingCenter.Unsubscribe<EventEditViewModel>(this, "SubmitEventSucesss");
+            MessagingCenter.Unsubscribe<EventEditViewModel>(this, "FailSubmitEvent");
         }
     }
 }

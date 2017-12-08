@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using TeLiga.Models;
 using Xamarin.Forms;
 using Xamarin.Forms.PlatformConfiguration;
 
@@ -15,12 +16,12 @@ namespace TeLiga.ViewModels
         public ICommand ProfileCommand { get; set; }
         public ICommand ExitCommand { get; set; }
 
-        public MenuMasterViewModel()
+        public MenuMasterViewModel(User user)
         {
             this.NewEventCommand = new Command(
                 () =>
                 {
-                    MessagingCenter.Send(this, "CreateNewEvent");
+                    MessagingCenter.Send<User>(user, "CreateNewEvent");
                 });
 
             this.ProfileCommand = new Command(

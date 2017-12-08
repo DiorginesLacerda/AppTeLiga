@@ -35,18 +35,12 @@ namespace TeLiga.Services
                 
                 var dataResult = JsonConvert.DeserializeObject<ResultLogin>(contentResult);
 
-                var userLogin = dataResult.Entidade;
+                var userLogin = dataResult.Usuario;
 
-                var user = new User
-                {
-                    Name = userLogin.Nome,
-                    UF = userLogin.Estado,
-                    City = userLogin.Cidade,
-                    Email = userLogin.Email,
-                    Password = userLogin.Senha,
-                };
+                //var user = new User
+                
 
-                return user;
+                return userLogin.getUser();
             }
             else
             {
@@ -57,10 +51,14 @@ namespace TeLiga.Services
 
     class ResultLogin
     {
-        public UserLogin Entidade { get; set; }
-        public string Lista { get; set; }
-        public int Request_Status { get; set; }
-        public string Message_Error { get; set; }
+
+        public UserLogin Usuario { get; set; }
+        public bool Resultado { get; set; }
+        public string Mensagem { get; set; }
+        //public UserLogin Entidade { get; set; }
+        //public string Lista { get; set; }
+        //public int Request_Status { get; set; }
+        //public string Message_Error { get; set; }
     }
 
     

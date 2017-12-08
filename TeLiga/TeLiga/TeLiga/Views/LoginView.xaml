@@ -27,14 +27,6 @@
                     <TapGestureRecognizer Command="{Binding RecoveryAccountCommand}"/>
                 </Label.GestureRecognizers>
             </Label>
-            <!--
-            <StackLayout 
-                Orientation="Horizontal"
-                HorizontalOptions="CenterAndExpand">
-                <Button Text="Facebbok" HorizontalOptions="FillAndExpand"/>
-                <Button Text="Google" HorizontalOptions="FillAndExpand"/>
-            </StackLayout>
-            -->
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

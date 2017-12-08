@@ -15,6 +15,7 @@ namespace TeLiga.Models
         public string Place { get; set; }
         public string Adress { get; set; }
         public string City { get; set; }
+        public string UF { get; set; }
         public bool Alert { get; set; }
     }
 
@@ -29,9 +30,13 @@ namespace TeLiga.Models
         public string Data_Votacao { get; set; }
         public string Data_Criacao { get; set; }
         public string Data_Alteracao { get; set; }
-        public int Post_Semelhante_Repetido { get; set; }
+        public string Post_Semelhante_Repetido { get; set; }
+        public string Link { get; set; }
         public string Status_Post { get; set; }
         public string Observacao_Moderador { get; set; }
+        public string Endereco { get; set; }
+        public string UF { get; set; }
+        public string  Cidade { get; set; }
 
         public EventVo getEventVo()
         {
@@ -40,8 +45,11 @@ namespace TeLiga.Models
                 Title = Titulo,
                 DateEvent = Convert.ToDateTime(Data_Votacao),
                 Description = Descricao,
-                Link = "google.com.br",
-                Place = Local
+                Link = Link,
+                Place = Local,
+                Adress = Endereco,
+                City = Cidade,
+                UF = UF
             };
 
         }

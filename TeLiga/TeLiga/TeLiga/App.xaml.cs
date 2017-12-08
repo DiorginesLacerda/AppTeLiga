@@ -22,16 +22,16 @@ namespace TeLiga
         }
         public App()
         {
-            InitializeComponent();
+            //InitializeComponent();
             MainPage = new NavigationPage(new LoginView());
         }
 
         protected override void OnStart()
         {
             MessagingCenter.Subscribe<User>(this, "SucessLogin",
-                (msg) =>
+                (user) =>
                 {
-                    MainPage = new MasterDetailView();
+                    MainPage = new MasterDetailView(user);
                 });
         }
 

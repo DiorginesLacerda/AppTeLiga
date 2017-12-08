@@ -16,7 +16,7 @@ namespace TeLiga.ViewModels
         public ICommand NewAccountCommand { get; set; }
         public ICommand RecoveryAccountCommand { get; set; }
 
-        private string email = "admin@hotmail.com";
+        private string email = "jose2@hotmail.com";
 
         public string Email
         {
@@ -24,7 +24,7 @@ namespace TeLiga.ViewModels
             set { email = value; }
         }
 
-        private string password = "admin";
+        private string password = "teste2";
 
         public string Password
         {

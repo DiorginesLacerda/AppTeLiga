@@ -12,7 +12,7 @@ namespace TeLiga.ViewModels
 {
     public class EventListViewModel: BaseViewModel
     {
-        
+        public User User { get; private set; }
         public ObservableCollection<EventVo> Events;
 
         private EventVo selectedItem;
@@ -31,15 +31,20 @@ namespace TeLiga.ViewModels
 
         public async Task GetListEvents()
         {
-            Events = await ListEventsService.GetEvents();
+            Events = await ListEventsService.GetEvents(User);
         }
 
-        public EventListViewModel()
+        public EventListViewModel(User user)
         {
             ListEventsService service = new ListEventsService();
-            
+            this.User = user;
 
-            /*this.Events = new ObservableCollection<EventVo>
+            
+        }
+    }
+}
+
+/*this.Events = new ObservableCollection<EventVo>
             {
                 new EventVo
                 {
@@ -302,6 +307,3 @@ namespace TeLiga.ViewModels
                     Alert = false
                 }
             };*/
-        }
-    }
-}

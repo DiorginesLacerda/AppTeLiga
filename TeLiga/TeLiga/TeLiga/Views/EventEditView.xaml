@@ -7,22 +7,22 @@
             <TableView>
                 <TableRoot>
                     <TableSection Title="Novo Evento">
-                        <EntryCell Label="Evento:" Placeholder="Nome do Evento"/>
+                        <EntryCell Label="Evento:" Placeholder="Nome do Evento" Text="{Binding Title}"/>
                         <ViewCell>
                             <StackLayout Orientation="Horizontal" Margin="12,0,0,0">
                                 <Label Text="Data:" VerticalTextAlignment="Center"/>
                                 <DatePicker Date="{Binding DateEvent}"/>
                             </StackLayout>
                         </ViewCell>
-                        <EntryCell Label="Descrição:"/>
-                        <EntryCell Label="Link:" Placeholder="Link do Evento"/>
-                        <EntryCell Label="Local:" Placeholder="Nome do Local"/>
-                        <EntryCell Label="Endereço:" Placeholder="Nome da Rua"/>
-                        <EntryCell Label="Número:" Placeholder="Número e Complemento"/>
+                        <EntryCell Label="Descrição:" Text="{Binding Description}"/>
+                        <EntryCell Label="Link:" Placeholder="Link do Evento" Text="{Binding Link}"/>
+                        <EntryCell Label="Local:" Placeholder="Nome do Local" Text="{Binding Place}"/>
+                        <EntryCell Label="Endereço:" Placeholder="Nome da Rua" Text="{Binding Street}"/>
+                        <EntryCell Label="Número:" Placeholder="Número e Complemento" Text="{Binding Number}"/>
                         <ViewCell>
                             <StackLayout Orientation="Horizontal" Margin="12,0,0,0">
                                 <Label Text="Cidade:" VerticalTextAlignment="Center"/>
-                                <Picker HorizontalOptions="FillAndExpand">
+                                <Picker HorizontalOptions="FillAndExpand" ItemDisplayBinding="{Binding City}">
                                     <Picker.Items>
                                         <x:String>Gravataí</x:String>
                                         <x:String>Glorinha</x:String>
