@@ -19590,7 +19590,7 @@
       ]
     },
     "Microsoft.NETCore.UniversalWindowsPlatform/6.0.2": {
-      "sha512": "1x37WPEc/7G4BedFtmSKCK9E1wVWm0BTgTBe7lv/LuN/5a48H8KpGLO5I0fmX51y5r/BXJNaLjpfDkH1i1j0rQ==",
+      "sha512": "7bSAODFSTYt1G3/mjyh9e5HufYQQL2GKbQzDiBTdIdHWAI1Y2jet4dSCuS22gC0I9///kV3Cmnwud/UtMPCKeg==",
       "type": "package",
       "path": "microsoft.netcore.universalwindowsplatform/6.0.2",
       "files": [
@@ -27499,6 +27499,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "http://nuget.syncfusion.com/nuget_xamarin/nuget/getsyncfusionpackages/xamarin": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {

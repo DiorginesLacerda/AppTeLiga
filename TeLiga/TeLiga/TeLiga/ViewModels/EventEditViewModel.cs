@@ -11,7 +11,7 @@ using Xamarin.Forms;
 
 namespace TeLiga.ViewModels
 {
-    class EventEditViewModel
+    class EventEditViewModel:BaseViewModel
     {
         public List<string> Cities { get; set; }
         public ICommand SubmitEventCommand { get; set; }
@@ -21,7 +21,12 @@ namespace TeLiga.ViewModels
         public string Title
         {
             get { return this.eventVo.Title; }
-            set { this.eventVo.Title = value; }
+            set
+            {
+                this.eventVo.Title = value;
+                OnPropertyChanged();
+                ((Command)SubmitEventCommand).ChangeCanExecute();
+            }
         }
 
 
@@ -34,7 +39,12 @@ namespace TeLiga.ViewModels
         public string Description
         {
             get { return this.eventVo.Description; }
-            set { this.eventVo.Description = value; }
+            set
+            {
+                this.eventVo.Description = value;
+                OnPropertyChanged();
+                ((Command)SubmitEventCommand).ChangeCanExecute();
+            }
         }
 
        
@@ -42,21 +52,36 @@ namespace TeLiga.ViewModels
         public string Link
         {
             get { return this.eventVo.Link; }
-            set { this.eventVo.Link = value; }
+            set
+            {
+                this.eventVo.Link = value;
+                OnPropertyChanged();
+                ((Command)SubmitEventCommand).ChangeCanExecute();
+            }
         }
 
         
         public string Place
         {
             get { return this.eventVo.Place; }
-            set { this.eventVo.Place = value; }
+            set
+            {
+                this.eventVo.Place = value;
+                OnPropertyChanged();
+                ((Command)SubmitEventCommand).ChangeCanExecute();
+            }
         }
 
 
         public string Adress
         {
             get { return street + ", " + number; }
-            set { this.eventVo.Adress = street+", "+number; }
+            set
+            {
+                this.eventVo.Adress = street+", "+number;
+                OnPropertyChanged();
+                ((Command)SubmitEventCommand).ChangeCanExecute();
+            }
         }
 
         private string street;
@@ -64,7 +89,12 @@ namespace TeLiga.ViewModels
         public string Street
         {
             get { return street; }
-            set { street = value; }
+            set
+            {
+                street = value;
+                OnPropertyChanged();
+                ((Command)SubmitEventCommand).ChangeCanExecute();
+            }
         }
 
         private string number;
@@ -72,13 +102,23 @@ namespace TeLiga.ViewModels
         public string Number
         {
             get { return number; }
-            set { number = value; }
+            set
+            {
+                number = value;
+                OnPropertyChanged();
+                ((Command)SubmitEventCommand).ChangeCanExecute();
+            }
         }
 
         public string City
         {
             get { return this.eventVo.City; }
-            set { this.eventVo.City = value; }
+            set
+            {
+                this.eventVo.City = value;
+                OnPropertyChanged();
+                ((Command)SubmitEventCommand).ChangeCanExecute();
+            }
         }
 
 
@@ -117,6 +157,20 @@ namespace TeLiga.ViewModels
             {
 
                 MessagingCenter.Send(this, "SubmitEvent");
+            },()=> 
+            {
+                return true
+                /*
+                !string.IsNullOrEmpty(this.eventVo.Title)
+                && !string.IsNullOrEmpty(this.eventVo.Description)
+                && !string.IsNullOrEmpty(this.eventVo.Link)
+                && !string.IsNullOrEmpty(this.eventVo.Place)
+                //&& !string.IsNullOrEmpty(this.Adress)
+                && !string.IsNullOrEmpty(this.Street)
+                && !string.IsNullOrEmpty(this.Number)
+                && !string.IsNullOrEmpty(this.eventVo.City)
+                */
+                ;
             });
         }
 

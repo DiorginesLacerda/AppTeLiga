@@ -1,25 +1,35 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="TeLiga.Views.ProfileView">
+             x:Class="TeLiga.Views.ProfileView"
+             Title="Perfil">
     <ContentPage.Content>
         <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
             <TableView>
                 <TableRoot>
                     <TableSection Title="Dados Pessoais">
-                        <EntryCell Label="Nome:" />
+                        <EntryCell Label="Nome:"
+                                   Text="{Binding Name}"
+                                   IsEnabled="False"/>
                         <ViewCell>
                             <StackLayout Orientation="Horizontal" Margin="12,0,0,0">
                                 <Label Text="Data de Nascimento:" VerticalOptions="Center"/>
-                                <DatePicker />
+                                <DatePicker Date="{Binding Birth}" IsEnabled="False"/>
                             </StackLayout>
                         </ViewCell>
-                        <EntryCell Label="CPF:" Keyboard="Numeric"/>
-                        <EntryCell Label="Email:" Keyboard="Email" HorizontalTextAlignment="Start"/>
+                        <EntryCell Label="CPF:" 
+                                   Keyboard="Numeric" 
+                                   Text="{Binding Cpf}"
+                                   IsEnabled="False"/>
+                        <EntryCell Label="Email:"
+                                   Text="{Binding Email}"
+                                   Keyboard="Email"
+                                   HorizontalTextAlignment="Start"
+                                   IsEnabled="False"/>
                         <ViewCell>
                             <StackLayout Orientation="Horizontal" Margin="12,0,0,0">
                                 <Label Text="Cidade:" VerticalTextAlignment="Center"/>
-                                <Picker HorizontalOptions="FillAndExpand">
+                                <Picker HorizontalOptions="FillAndExpand" SelectedItem="{Binding City}" IsEnabled="False">
                                     <Picker.Items>
                                         <x:String>Gravataí</x:String>
                                         <x:String>Glorinha</x:String>
@@ -30,7 +40,9 @@
                         <ViewCell>
                             <StackLayout Orientation="Horizontal" Margin="12,0,0,0">
                                 <Label Text="UF:" VerticalTextAlignment="Center"/>
-                                <Picker HorizontalOptions="FillAndExpand">
+                                <Picker HorizontalOptions="FillAndExpand"
+                                        SelectedItem="{Binding UF}" IsEnabled="False"
+                                        >
                                     <Picker.Items>
                                         <x:String>RS</x:String>
                                         <x:String>SC</x:String>
@@ -39,30 +51,39 @@
                             </StackLayout>
                         </ViewCell>
                     </TableSection>
+                    <!--
                     <TableSection Title="Senha">
                         <ViewCell>
-                            <StackLayout Orientation="Horizontal" Margin="12,0,0,0">
-                                <Label Text="Senha:" VerticalTextAlignment="Center"/>
-                                <Entry Text="12345678" IsPassword="True"
-                                       HorizontalOptions="FillAndExpand"
+                            <StackLayout Orientation="Horizontal" Margin="12,0,0,0" HorizontalOptions="FillAndExpand">
+                                <Label Text="Senha:" VerticalTextAlignment="Center" MinimumWidthRequest="100"
+                                       HorizontalOptions="Start"/>
+                                <Entry Text="{Binding FirstPassord}" IsPassword="True"
+                                       HorizontalOptions="End"
+                                       WidthRequest="250"
+                                       HorizontalTextAlignment="End"
                                        />
                             </StackLayout>
                         </ViewCell>
                         <ViewCell>
-                            <StackLayout Orientation="Horizontal" Margin="12,0,0,0">
-                                <Label Text="Confirme:" VerticalTextAlignment="Center"/>
-                                <Entry Text="12345678" IsPassword="True"
-                                       HorizontalOptions="FillAndExpand"
+                            <StackLayout Orientation="Horizontal" Margin="12,0,0,0" HorizontalOptions="FillAndExpand">
+                                <Label Text="Confirme:" VerticalTextAlignment="Center" MinimumWidthRequest="100"/>
+                                <Entry Text="{Binding ConfirmPassord}" IsPassword="True"
+                                       HorizontalOptions="End"
+                                       WidthRequest="250"
                                        />
                             </StackLayout>
                         </ViewCell>
                     </TableSection>
+                    
                     <TableSection Title="Preferências">
                         <SwitchCell Text="Receber Alertas de Novos Eventos"/>
                     </TableSection>
+                    -->
                 </TableRoot>
             </TableView>
+            <!--
             <Button Text="Salvar" Command="{Binding SaveProfileCommand}"/>
+            -->
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

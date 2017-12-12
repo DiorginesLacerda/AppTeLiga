@@ -3,5 +3,6 @@
   <PropertyGroup>
     <SelectedDevice>Genymotion Custom Phone - 7.1.0 - API 25 - 768x1280</SelectedDevice>
     <DefaultDevice>Android_Accelerated_Nougat</DefaultDevice>
+    <ProjectView>ProjectFiles</ProjectView>
   </PropertyGroup>
 </Project>

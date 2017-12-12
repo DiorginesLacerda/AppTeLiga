@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TeLiga.Models;
 using TeLiga.ViewModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -12,11 +13,13 @@ namespace TeLiga.Views
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class ProfileView : ContentPage
 	{
+        public User user { get; set; }
         public ProfileViewModel ViewModel { get; private set; }
-        public ProfileView ()
+        public ProfileView (User user)
 		{
+            this.user = user;
 			InitializeComponent ();
-            this.ViewModel = new ProfileViewModel();
+            this.ViewModel = new ProfileViewModel(user);
             this.BindingContext = this.ViewModel;
 		}
 

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using TeLiga.Resources;
 using TeLiga.Models;
 using Xamarin.Forms;
 using Xamarin.Forms.PlatformConfiguration;
@@ -27,13 +28,13 @@ namespace TeLiga.ViewModels
             this.ProfileCommand = new Command(
                 () =>
                 {
-                    MessagingCenter.Send(this, "CallProfileView");
+                    MessagingCenter.Send<User>(user, "CallProfileView");
                 });
 
             this.ExitCommand = new Command(
                 () => 
                 {
-                    
+                    DependencyService.Get<IAction>().Close();
                 });
             
         }

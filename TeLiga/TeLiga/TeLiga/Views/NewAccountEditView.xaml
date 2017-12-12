@@ -42,7 +42,7 @@
                         <ViewCell>
                             <StackLayout Orientation="Horizontal" Margin="12,0,0,0">
                                 <Label Text="Senha:" VerticalTextAlignment="Center"/>
-                                <Entry Text="{Binding Password}" IsPassword="True"
+                                <Entry Text="{Binding FirstPassword}" IsPassword="True"
                                        HorizontalOptions="FillAndExpand"
                                        />
                             </StackLayout>

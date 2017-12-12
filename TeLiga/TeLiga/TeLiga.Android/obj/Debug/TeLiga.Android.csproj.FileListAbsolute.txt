@@ -61,3 +61,4 @@ C:\Users\Diorgines\Source\Repos\AppTeLiga\TeLiga\TeLiga\TeLiga.Android\obj\Debug
 C:\Users\Diorgines\Source\Repos\AppTeLiga\TeLiga\TeLiga\TeLiga.Android\obj\Debug\android\assets\Xamarin.Forms.Core.dll.mdb
 C:\Users\Diorgines\Source\Repos\AppTeLiga\TeLiga\TeLiga\TeLiga.Android\obj\Debug\android\assets\Xamarin.Forms.Platform.Android.dll.mdb
 C:\Users\Diorgines\Source\Repos\AppTeLiga\TeLiga\TeLiga\TeLiga.Android\obj\Debug\android\assets\Xamarin.Forms.Xaml.dll.mdb
+C:\Users\Diorgines\Source\Repos\AppTeLiga\TeLiga\TeLiga\TeLiga.Android\obj\Debug\res\drawable\lupa.png

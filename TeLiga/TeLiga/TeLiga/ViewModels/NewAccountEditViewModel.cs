@@ -10,7 +10,7 @@ using Xamarin.Forms;
 
 namespace TeLiga.ViewModels
 {
-    class NewAccountEditViewModel
+    class NewAccountEditViewModel: BaseViewModel
     {
         public ICommand SaveAccountCommand { get; set; }
         public User User { get; set; }
@@ -18,7 +18,12 @@ namespace TeLiga.ViewModels
         public string Name
         {
             get { return this.User.Name; }
-            set { this.User.Name = value; }
+            set
+            {
+                this.User.Name = value;
+                OnPropertyChanged();
+                ((Command)SaveAccountCommand).ChangeCanExecute();
+            }
         }
 
         
@@ -32,43 +37,93 @@ namespace TeLiga.ViewModels
         public string Cpf
         {
             get { return this.User.Cpf; }
-            set { this.User.Cpf = value; }
+            set
+            {
+                this.User.Cpf = value;
+                OnPropertyChanged();
+                ((Command)SaveAccountCommand).ChangeCanExecute();
+            }
+
         }
 
 
         public string Email
         {
             get { return this.User.Email; }
-            set { this.User.Email = value; }
+            set
+            {
+                this.User.Email = value;
+                OnPropertyChanged();
+                ((Command)SaveAccountCommand).ChangeCanExecute();
+            }
         }
         
 
         public  string City
         {
             get { return this.User.City; }
-            set { this.User.City = value; }
+            set
+            {
+                this.User.City = value;
+                OnPropertyChanged();
+                ((Command)SaveAccountCommand).ChangeCanExecute();
+            }
         }
 
         public string UF
         {
             get { return this.User.UF; }
-            set { this.User.UF = value; }
+            set
+            {
+                this.User.UF = value;
+                OnPropertyChanged();
+                ((Command)SaveAccountCommand).ChangeCanExecute();
+            }
         }
 
+        
 
-
-        public string Password
+        public bool setPassword()
         {
-            get { return this.User.Password; }
-            set { this.User.Password = value; }
+            if (!string.IsNullOrEmpty(firstPassword) && firstPassword.Equals(confirmPassword))
+            {
+                User.Password = firstPassword;
+                return true;
+            }
+            else
+            {
+                MessagingCenter.Send(this, "IncorrectPassorrd");
+                return false;
+            }
         }
 
-        public string ConfirmPassword { get; set; }
+        private string firstPassword;
+
+        public string FirstPassword
+        {
+            get { return firstPassword; }
+            set
+            {
+                firstPassword = value;
+                OnPropertyChanged();
+                ((Command)SaveAccountCommand).ChangeCanExecute();
+            }
+        }
 
 
 
+        private string confirmPassword;
 
-
+        public string ConfirmPassword
+        {
+            get { return confirmPassword; }
+            set
+            {
+                confirmPassword = value;
+                OnPropertyChanged();
+                ((Command)SaveAccountCommand).ChangeCanExecute();
+            }
+        }
 
         public NewAccountEditViewModel()
         {
@@ -77,16 +132,28 @@ namespace TeLiga.ViewModels
             SaveAccountCommand = new Command(
                 async()=> 
                 {
-                    var resultUser = await NewAccountService.CreateNewAccount(this.User);
-                    if (resultUser!=null)
+                    if (setPassword())
                     {
-                        MessagingCenter.Send<User>(resultUser, "SucessLogin");
+                        var resultUser = await NewAccountService.CreateNewAccount(this.User);
+                        if (resultUser != null)
+                        {
+                            MessagingCenter.Send<User>(resultUser, "SucessLogin");
+                        }
+                        else
+                        {
+                           // MessagingCenter.Send<User>(this.User, "SucessLogin");
+                             MessagingCenter.Send<User>(this.User, "FailCad");
+                        }
                     }
-                    else
-                    {
-                        MessagingCenter.Send<User>(this.User, "SucessLogin");
-                       // MessagingCenter.Send<User>(this.User, "FailCad");
-                    }
+                }, ()=>
+                {
+                    return !string.IsNullOrEmpty(this.Name)
+                    && !string.IsNullOrEmpty(this.Cpf)
+                    && !string.IsNullOrEmpty(this.Email)
+                    && !string.IsNullOrEmpty(this.City)
+                    && !string.IsNullOrEmpty(this.UF)
+                    && !string.IsNullOrEmpty(this.FirstPassword)
+                    && !string.IsNullOrEmpty(this.ConfirmPassword);
                 });
         }
 

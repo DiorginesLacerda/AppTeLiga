@@ -19,7 +19,7 @@
                                            VerticalTextAlignment="Center"
                                            HorizontalOptions="CenterAndExpand"
                                            FontAttributes="Bold"
-                                           FontSize="Large"/>
+                                           FontSize="Medium"/>
                                     <Label Text="{Binding DateEvent, StringFormat='{0:dd/MM/yyyy hh:mm}'}"
                                            VerticalOptions="CenterAndExpand"
                                            HorizontalOptions="CenterAndExpand"

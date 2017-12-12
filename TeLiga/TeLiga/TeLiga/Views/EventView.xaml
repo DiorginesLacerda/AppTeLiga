@@ -34,10 +34,12 @@
             <Label Text="{Binding City}"
                    FontAttributes="Bold"
                    FontSize="Medium"/>
+            <!--
             <StackLayout Orientation="Horizontal">
                 <Label Text="Salvar na minha Agenda"/>
                 <Switch IsToggled="{Binding Alert, Mode=TwoWay}" />
             </StackLayout>
+            -->
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -20,7 +20,10 @@
                     <TapGestureRecognizer Command="{Binding ProfileCommand}"/>
                 </Label.GestureRecognizers>
             </Label>
-            <Label Text="Sair não Imlementado" >
+            <Label Text="Sair"
+                   FontSize="Large"
+                   FontAttributes="Bold"
+                   x:Name="btnExit">
                 <Label.GestureRecognizers>
                     <TapGestureRecognizer Command="{Binding ExitCommand}"/>
                 </Label.GestureRecognizers>

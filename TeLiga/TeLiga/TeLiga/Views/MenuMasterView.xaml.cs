@@ -27,15 +27,18 @@ namespace TeLiga.Views
             MessagingCenter.Subscribe<User>(this, "CreateNewEvent",
                 async (user) =>
                 {
-                    
                     await App.NavigateMasterDetail(new EventEditView(user));
                    // this.Detail = new NavigationPage(new EventEditView());
                 });
+            if(Device.RuntimePlatform == Device.iOS)
+            {
+                this.btnExit.IsVisible = false;
+            }
 
-            MessagingCenter.Subscribe<MenuMasterViewModel>(this, "CallProfileView",
+            MessagingCenter.Subscribe<User>(this, "CallProfileView",
                 async(msg) =>
                 {
-                    await App.NavigateMasterDetail(new ProfileView());
+                    await App.NavigateMasterDetail(new ProfileView(msg));
                 });
         }
         protected override void OnDisappearing()
